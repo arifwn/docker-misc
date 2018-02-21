@@ -9,6 +9,7 @@ RUN set -ex; \
 	apt-get install -y --no-install-recommends \
 		libmemcached-dev \
 		zip \
+		unzip \
 		libxslt-dev \
 	; \
 	\

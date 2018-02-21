@@ -7,6 +7,8 @@ RUN set -ex; \
 	\
 	apt-get update; \
 	apt-get install -y --no-install-recommends \
+		zip \
+		unzip \
 		libjpeg-dev \
 		libpng-dev \
 		libxslt-dev \

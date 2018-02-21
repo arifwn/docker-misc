@@ -9,10 +9,11 @@ RUN set -ex; \
 	apt-get install -y --no-install-recommends \
 		libmemcached-dev \
 		zip \
+		unzip \
 		libxslt-dev \
 	; \
 	\
-	pecl install memcached; \
+	pecl install memcached-2.2.0; \
 	docker-php-ext-enable memcached; \
 	docker-php-ext-install xsl; \
 	\
