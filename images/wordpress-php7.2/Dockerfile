@@ -8,8 +8,6 @@ RUN set -ex; \
 	apt-get update; \
 	apt-get install -y --no-install-recommends \
 		libmemcached-dev \
-		zip \
-		unzip \
 		libxslt-dev \
 	; \
 	\
@@ -29,6 +27,10 @@ RUN set -ex; \
 		| xargs -rt apt-mark manual; \
 	\
 	apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; \
+	apt-get install -y \
+		zip \
+		unzip \
+	; \
 	rm -rf /var/lib/apt/lists/*
 
 ENTRYPOINT ["docker-entrypoint.sh"]
