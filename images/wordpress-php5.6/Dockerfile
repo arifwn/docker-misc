@@ -11,8 +11,6 @@ RUN set -ex; \
 		libmemcached11 \
 		libmemcachedutil2 \
 		libz-dev \
-		zip \
-		unzip \
 		libxslt-dev \
 	; \
 	\
