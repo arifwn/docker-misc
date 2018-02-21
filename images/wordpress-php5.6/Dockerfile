@@ -1,4 +1,4 @@
-FROM wordpress:php7.2
+FROM wordpress:php5.6
 
 # install the PHP extensions we need
 RUN set -ex; \
