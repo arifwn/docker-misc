@@ -8,6 +8,9 @@ RUN set -ex; \
 	apt-get update; \
 	apt-get install -y --no-install-recommends \
 		libmemcached-dev \
+		libmemcached11 \
+		libmemcachedutil2 \
+		libz-dev \
 		zip \
 		unzip \
 		libxslt-dev \
