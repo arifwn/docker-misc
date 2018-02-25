@@ -12,11 +12,12 @@ RUN set -ex; \
 		libmemcachedutil2 \
 		libz-dev \
 		libxslt-dev \
+		libxml2-dev \
 	; \
 	\
 	pecl install memcached-2.2.0; \
 	docker-php-ext-enable memcached; \
-	docker-php-ext-install xsl; \
+	docker-php-ext-install xsl soap; \
 	\
 # reset apt-mark's "manual" list so that "purge --auto-remove" will remove all build dependencies
 	apt-mark auto '.*' > /dev/null; \

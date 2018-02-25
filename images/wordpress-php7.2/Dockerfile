@@ -9,12 +9,15 @@ RUN set -ex; \
 	apt-get install -y --no-install-recommends \
 		libmemcached-dev \
 		libz-dev \
+		libxml2-dev \
 		libxslt-dev \
+		unixodbc-dev \
 	; \
 	\
 	pecl install memcached; \
 	docker-php-ext-enable memcached; \
-	docker-php-ext-install xsl; \
+	docker-php-ext-configure pdo_odbc --with-pdo-odbc=unixODBC,/usr; \
+	docker-php-ext-install xsl pdo_odbc soap; \
 	\
 # reset apt-mark's "manual" list so that "purge --auto-remove" will remove all build dependencies
 	apt-mark auto '.*' > /dev/null; \
@@ -31,6 +34,7 @@ RUN set -ex; \
 	apt-get install -y \
 		zip \
 		unzip \
+		unixodbc \
 	; \
 	rm -rf /var/lib/apt/lists/*
 
