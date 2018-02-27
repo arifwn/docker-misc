@@ -12,12 +12,13 @@ RUN set -ex; \
 		libxml2-dev \
 		libxslt-dev \
 		unixodbc-dev \
+		freetds-dev \
 	; \
 	\
 	pecl install memcached; \
 	docker-php-ext-enable memcached; \
 	docker-php-ext-configure pdo_odbc --with-pdo-odbc=unixODBC,/usr; \
-	docker-php-ext-install xsl pdo_odbc soap; \
+	docker-php-ext-install xsl pdo_odbc soap pdo_dblib; \
 	\
 # reset apt-mark's "manual" list so that "purge --auto-remove" will remove all build dependencies
 	apt-mark auto '.*' > /dev/null; \
