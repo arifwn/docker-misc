@@ -1,5 +1,7 @@
 FROM wordpress:cli
 
+USER root
+
 RUN apk add --no-cache \
 		bash \
 		vim \
@@ -7,3 +9,5 @@ RUN apk add --no-cache \
 		zip
 
 COPY repair-wp.sh /usr/local/bin/
+
+USER www-data
