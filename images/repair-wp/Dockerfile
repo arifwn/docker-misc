@@ -10,4 +10,4 @@ RUN apk add --no-cache \
 
 COPY repair-wp.sh /usr/local/bin/
 
-USER www-data
+USER 33:33
