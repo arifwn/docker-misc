@@ -17,7 +17,9 @@ RUN set -ex; \
 	; \
 	\
 	pecl install memcached; \
+	pecl install mcrypt-1.0.1; \
 	docker-php-ext-enable memcached; \
+	docker-php-ext-enable mcrypt; \
 	docker-php-ext-configure pdo_odbc --with-pdo-odbc=unixODBC,/usr; \
 	docker-php-ext-configure pdo_dblib --with-libdir=/lib/x86_64-linux-gnu; \
 	docker-php-ext-install xsl pdo_odbc soap pdo_dblib zip; \
