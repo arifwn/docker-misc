@@ -14,6 +14,7 @@ RUN set -ex; \
 		unixodbc-dev \
 		freetds-dev \
 		zlib1g-dev \
+		libmcrypt-dev \
 	; \
 	\
 	pecl install memcached; \
